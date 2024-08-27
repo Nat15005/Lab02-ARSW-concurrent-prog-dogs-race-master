@@ -16,7 +16,8 @@ Creación, puesta en marcha y coordinación de hilos.
 
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
 
-    ![image](https://github.com/user-attachments/assets/0833437e-63a8-4f22-a8a6-6d96a73f3dec)
+    ![image](https://github.com/user-attachments/assets/502a040b-9b2a-4ac7-ade0-8dfb39fb1383)
+
 
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
@@ -74,7 +75,8 @@ Taller.
 
     - Al correr el programa identificamos que hay inconsistencias en el resultado, ya que a diferentes galgos se le asigna la misma posición. Esto indica que se está presentando una condición de carrera
 
-      ![image](https://github.com/user-attachments/assets/327b21f2-6093-47ca-99dd-8688926a3b3e)
+      ![image](https://github.com/user-attachments/assets/b915fbe9-0d00-4f66-93ca-a81a2a4e995d)
+
 
     - Ahora, identificamos las regiones críticas del programa. El problema radica en que varios hilos pueden leer el valor de ultimaPosicionAlcanzada simultáneamente antes de que cualquiera de ellos lo modifique, lo que provoca que varios galgos piensen que han alcanzado la misma posición.
 
