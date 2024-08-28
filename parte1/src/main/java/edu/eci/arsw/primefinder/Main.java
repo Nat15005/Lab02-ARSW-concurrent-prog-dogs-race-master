@@ -35,7 +35,6 @@ public class Main {
 			pft3.resumeThread();
 		}
 
-
 		try {
 			pft1.join();
 			pft2.join();
