@@ -8,20 +8,28 @@ Arquitecturas de Software – ARSW
 
 ### Parte I – Antes de terminar la clase.
 
-Creación, puesta en marcha y coordinación de hilos.
+#### Creación, puesta en marcha y coordinación de hilos.
 
 1. Revise el programa “primos concurrentes” (en la carpeta parte1), dispuesto en el paquete edu.eci.arsw.primefinder. Este es un programa que calcula los números primos entre dos intervalos, distribuyendo la búsqueda de los mismos entre hilos independientes. Por ahora, tiene un único hilo de ejecución que busca los primos entre 0 y 30.000.000. Ejecútelo, abra el administrador de procesos del sistema operativo, y verifique cuantos núcleos son usados por el mismo.
 
     ![image](https://github.com/user-attachments/assets/48a49e79-dd5f-4301-9fee-7d8f4588611b)
 
+    La CPU tiene 4 núcleos físicos. Como la CPU soporta hyper-threading, estos núcleos pueden manejar 2 hilos lógicos por núcleo, lo que resulta en un total de 8 hilos lógicos. Esto permite que el sistema operativo ejecute hasta 8 hilos simultáneamente, de esta manera, el sistema operativo distribuye los 8 hilos entre los núcleos lógicos disponibles.
+Al realizar este ejercicio, evidenciamos que un nucleo estaba más ocupado que otros y esto se debe a que la distribución de las cargas es desigual.
+
 2. Modifique el programa para que, en lugar de resolver el problema con un solo hilo, lo haga con tres, donde cada uno de éstos hará la tarcera parte del problema original. Verifique nuevamente el funcionamiento, y nuevamente revise el uso de los núcleos del equipo.
 
     ![image](https://github.com/user-attachments/assets/502a040b-9b2a-4ac7-ade0-8dfb39fb1383)
 
-
+    Con tres hilos, el sistema operativo ahora tiene más hilos para distribuir entre los núcleos. Como la CPU tiene 4 núcleos físicos y 8 hilos lógicos, los tres hilos del programa se repartirán entre estos núcleos. Esto permite que más hilos se ejecuten simultáneamente sin competencia, aprovechando mejor la capacidad de la CPU. En el administrador de procesos, se observa un uso más equilibrado y un aumento en la actividad de los núcleos de la CPU.
+   
 3. Lo que se le ha pedido es: debe modificar la aplicación de manera que cuando hayan transcurrido 5 segundos desde que se inició la ejecución, se detengan todos los hilos y se muestre el número de primos encontrados hasta el momento. Luego, se debe esperar a que el usuario presione ENTER para reanudar la ejecución de los mismo.
 
+    ![image](https://github.com/user-attachments/assets/fda9b010-6f6c-4c8d-902c-068801afb04e)
 
+    ![image](https://github.com/user-attachments/assets/76190bcc-37a6-41c0-a408-8d9708a1e06f)
+
+    La CPU pasará por un ciclo de alta y baja utilización basado en las fases de ejecución, detención y reanudación de los hilos.
 
 ### Parte II 
 
