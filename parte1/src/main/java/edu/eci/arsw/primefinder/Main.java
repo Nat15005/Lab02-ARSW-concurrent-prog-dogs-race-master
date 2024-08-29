@@ -15,7 +15,7 @@ public class Main {
 		while(pft1.isAlive() || pft2.isAlive() || pft1.isAlive()){
 
 			try {
-				Thread.sleep(1000);
+				Thread.sleep(5000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -27,6 +27,7 @@ public class Main {
 			System.out.println("Hilos pausados. Presiona ENTER para continuar...");
 
 			// ENTER
+			System.out.println();
 			Scanner scanner = new Scanner(System.in);
 			scanner.nextLine();
 
